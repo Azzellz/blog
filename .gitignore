@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+node_modules.nosync/
+public/
+.deploy*/
+_multiconfig.yml
+.obsidian/workspace
