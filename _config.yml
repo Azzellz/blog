@@ -3,12 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ""
+title: YuzuTea🍵
+subtitle: "YuzuTea"
 description: ""
 keywords:
 author: YuzuTea
-language: zh-CN
+language:
+    - zh-CN
+    - zh-HK
+    - zh-TW
+    - en
+    - ja
 timezone: ""
 
 # URL

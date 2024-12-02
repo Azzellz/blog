@@ -1,0 +1,10 @@
+{
+  "alwaysUpdateLinks": false,
+  "newFileLocation": "current",
+  "userIgnoreFilters": [
+    "node_modules.nosync/",
+    "script/",
+    "themes/",
+    "scaffolds/"
+  ]
+}

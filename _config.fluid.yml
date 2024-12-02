@@ -1,0 +1,82 @@
+# 用于浏览器标签的图标
+# Icon for browser tab
+favicon: /img/favicon.ico
+
+# 用于苹果设备的图标
+# Icon for Apple touch
+apple_touch_icon: /img/favicon.ico
+
+# 顶部导航栏配置
+navbar:
+    blog_title: ユズチャ
+
+# 主题字体配置
+font:
+    font_size: 18px # 全局字号
+    font_family: 楷体, Georgia, serif # 全局字体族
+    code_font_size: 85% # 代码的字号
+
+color:
+    
+
+# 首页配置
+index:
+    # 首页大图
+    banner_img: /img/background/02.png
+    # 首页打字机
+    slogan:
+        enable: true
+        text: 来一杯柚子茶吧.
+        api:
+            enable: true
+            url: "https://v1.hitokoto.cn/"
+            method: "GET"
+            headers: {}
+            keys: ["hitokoto"]
+
+# 底部PV UV统计
+footer:
+    statistics:
+        enable: true
+        source: "busuanzi" # 可选 leancloud | busuanzi  根据自己需求选择
+        pv_format: "总访问量 {} 次" # 显示的文本，{}是数字的占位符（必须包含)，下同
+        uv_format: "总访客数 {} 人"
+
+# 关于页
+about:
+    banner_img: /img/background/01.png
+    avatar: /img/avatar.png
+    name: "ユズチャ"
+    intro: "A Web Developer."
+    icons:
+        - {
+              class: "iconfont icon-home-fill",
+              link: "http://124.220.29.112/",
+              tip: "Home",
+          }
+        - {
+              class: "iconfont icon-github-fill",
+              link: "https://github.com/Azzellz",
+              tip: "GitHub",
+          }
+        - {
+              class: "iconfont icon-wechat-fill",
+              qrcode: "/img/qrcode/wechat.png",
+          }
+        - { class: "iconfont icon-qq-fill", qrcode: "/img/qrcode/qq.png" }
+
+# 文章页面
+post:
+    banner_img: /img/background/02.png
+
+# 标签页
+tag:
+    banner_img: /img/background/02.png
+
+# 分类页
+category:
+    banner_img: /img/background/02.png
+
+# 归档页
+archive:
+    banner_img: /img/background/02.png
