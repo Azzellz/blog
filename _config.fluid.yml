@@ -15,10 +15,7 @@ font:
     font_size: 18px # 全局字号
     font_family: 楷体, Georgia, serif # 全局字体族
     code_font_size: 85% # 代码的字号
-
-color:
     
-
 # 首页配置
 index:
     # 首页大图
