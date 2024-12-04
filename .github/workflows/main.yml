@@ -1,0 +1,69 @@
+name: CI/CD
+
+# 触发条件
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# 定义工作流的作业
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出代码到运行器
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # 安装依赖
+      - name: Install dependencies
+        run: npm install
+
+      # 构建项目
+      - name: Build project
+        run: npm run build
+
+      # 将构建产物保存为 artifact
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-dist   # artifact 的名称
+          path: public     # 构建产物的路径
+
+  CD:
+    needs: CI
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出代码到运行器
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 下载构建产物
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-dist   # 与上面上传的名称一致
+          path: public     # 下载到的路径
+
+      # 使用 SSH 部署到服务器
+      - name: Upload to Deploy Server
+        uses: easingthemes/ssh-deploy@v2.0.7
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SOURCE: "public/"           # 使用下载的构建产物
+          TARGET: "/var/www/blog.yuzu-tea.me"   # 部署目标目录
+          ARGS: "-avzr --delete"
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          
