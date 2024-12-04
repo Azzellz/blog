@@ -63,7 +63,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SOURCE: "public/"           # 使用下载的构建产物
           TARGET: "/var/www/blog.yuzu-tea.me"   # 部署目标目录
-          ARGS: "-avzr --delete"
+          ARGS: "-avzr --delete --rsync-path='sudo rsync'"
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USER }}
           
