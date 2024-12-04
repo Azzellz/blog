@@ -15,7 +15,7 @@ font:
     font_size: 18px # 全局字号
     font_family: 楷体, Georgia, serif # 全局字体族
     code_font_size: 85% # 代码的字号
-    
+
 # 首页配置
 index:
     # 首页大图
@@ -65,6 +65,10 @@ about:
 # 文章页面
 post:
     banner_img: /img/background/02.png
+    math:
+        enable: true
+        specific: false
+        engine: mathjax
 
 # 标签页
 tag:
