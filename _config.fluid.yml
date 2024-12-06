@@ -64,11 +64,22 @@ about:
 
 # 文章页面
 post:
+    # 顶部大图
     banner_img: /img/background/02.png
+    # 数学公式配置
     math:
         enable: true
         specific: false
         engine: mathjax
+    # 评论插件
+    # Comment plugin
+    comments:
+        enable: true
+        # 指定的插件，需要同时设置对应插件的必要参数
+        # 国内推荐使用waline
+        # The specified plugin needs to set the necessary parameters at the same time
+        # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss
+        type: waline
 
 # 标签页
 tag:
@@ -81,3 +92,18 @@ category:
 # 归档页
 archive:
     banner_img: /img/background/02.png
+
+# Waline
+# 从 Valine 衍生而来，额外增加了服务端和多种功能
+# Derived from Valine, with self-hosted service and new features
+# See: https://waline.js.org/
+waline:
+    serverURL: "https://blog-comments-server-sage.vercel.app/"
+    path: window.location.pathname
+    meta: ["nick", "mail", "link"]
+    requiredMeta: ["nick"]
+    lang: "zh-CN"
+    emoji: ["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"]
+    dark: 'html[data-user-color-scheme="dark"]'
+    wordLimit: 0
+    pageSize: 10
