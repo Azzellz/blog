@@ -39,7 +39,7 @@ jobs:
 
             # 构建项目
             - name: Build project
-              run: npm run build
+              run: npm run auto
 
             # 将构建产物保存为 artifact
             - name: Upload artifact

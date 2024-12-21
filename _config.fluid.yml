@@ -107,3 +107,17 @@ waline:
     dark: 'html[data-user-color-scheme="dark"]'
     wordLimit: 0
     pageSize: 10
+
+# 代码配置
+code:
+    copy_btn: true
+    highlight:
+        enable: true
+        line_number: true
+        lib: "highlightjs" # 可选 highlightjs | prismjs
+        highlightjs:
+            style: "atom-one-dark"
+            bg_color: true
+        prismjs:
+            style: "default"
+            preprocess: true
